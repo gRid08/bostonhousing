@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container d-flex justify-content-center align-items-center">
+    <div>
+      <h1 class="text-center mb-4">Boston House Price Prediction</h1>
+      <form action="{{ url_for('predict')}}" method="post" class="border p-4 rounded shadow-sm bg-light" style="max-width: 800px;">
+        <div class="mb-3">
+          <label for="CRIM" class="form-label">CRIM</label>
+          <input type="text" class="form-control" name="CRIM" placeholder="CRIM" required />
+        </div>
+        <div class="mb-3">
+          <label for="ZN" class="form-label">ZN</label>
+          <input type="text" class="form-control" name="ZN" placeholder="ZN" required />
+        </div>
+        <div class="mb-3">
+          <label for="INDUS" class="form-label">INDUS</label>
+          <input type="text" class="form-control" name="INDUS" placeholder="INDUS" required />
+        </div>
+        <div class="mb-3">
+          <label for="CHAS" class="form-label">CHAS</label>
+          <input type="text" class="form-control" name="CHAS" placeholder="CHAS" required />
+        </div>
+        <div class="mb-3">
+          <label for="NOX" class="form-label">NOX</label>
+          <input type="text" class="form-control" name="NOX" placeholder="NOX" required />
+        </div>
+        <div class="mb-3">
+          <label for="RM" class="form-label">RM</label>
+          <input type="text" class="form-control" name="RM" placeholder="RM" required />
+        </div>
+        <div class="mb-3">
+          <label for="Age" class="form-label">Age</label>
+          <input type="text" class="form-control" name="Age" placeholder="Age" required />
+        </div>
+        <div class="mb-3">
+          <label for="DIS" class="form-label">DIS</label>
+          <input type="text" class="form-control" name="DIS" placeholder="DIS" required />
+        </div>
+        <div class="mb-3">
+          <label for="RAD" class="form-label">RAD</label>
+          <input type="text" class="form-control" name="RAD" placeholder="RAD" required />
+        </div>
+        <div class="mb-3">
+          <label for="TAX" class="form-label">TAX</label>
+          <input type="text" class="form-control" name="TAX" placeholder="TAX" required />
+        </div>
+        <div class="mb-3">
+          <label for="PTRATIO" class="form-label">PTRATIO</label>
+          <input type="text" class="form-control" name="PTRATIO" placeholder="PTRATIO" required />
+        </div>
+        <div class="mb-3">
+          <label for="B" class="form-label">B</label>
+          <input type="text" class="form-control" name="B" placeholder="B" required />
+        </div>
+        <div class="mb-3">
+          <label for="LSTAT" class="form-label">LSTAT</label>
+          <input type="text" class="form-control" name="LSTAT" placeholder="LSTAT" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </form>
+      <br>
+      {{prediction_text}}
+    </div>
+  </div>
+</body>
+
+</html>
